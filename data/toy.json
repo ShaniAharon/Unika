@@ -1,0 +1,26 @@
+[
+  {
+    "name": "shani",
+    "price": 44,
+    "createdAt": 1695813045381,
+    "lables": ["Battery Powered"],
+    "inStock": true,
+    "img": "https://images.unsplash.com/photo-1587654780291-39c9404d746b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  },
+  {
+    "name": "Board Game - Mystery Mansion",
+    "price": 29.95,
+    "labels": ["Box game", "Strategy", "Family"],
+    "createdAt": 1671345678902,
+    "inStock": true,
+    "img": "https://images.unsplash.com/photo-1587654780291-39c9404d746b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  },
+  {
+    "name": "Watercolor Paint Set",
+    "price": 18.5,
+    "labels": ["Art", "Craft", "Kids"],
+    "createdAt": 1671345678903,
+    "inStock": false,
+    "img": "https://images.unsplash.com/photo-1587654780291-39c9404d746b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  }
+]

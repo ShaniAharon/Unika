@@ -1,0 +1,14 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore logs and editor files
+logs/
+*.log
+.DS_Store
+.vscode/
+
+# Ignore environment variable files
+.env
+
+# Ignore any sensitive or personal files
+# config/secrets.json
