@@ -10,7 +10,7 @@ dotenv.config(); // add the config
 import { logger } from './services/logger.service.js'
 logger.info('server.js loaded...')
 console.log('process.env.SECRET1', process.env.SECRET1)
-console.log('process.env.MONGO_URL', process.env.MONGO_URL)
+console.log('process.env.MONGODB_URI', process.env.MONGODB_URI)
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express()

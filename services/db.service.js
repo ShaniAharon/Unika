@@ -8,6 +8,8 @@ export const dbService = {
     getCollection
 }
 
+
+
 var dbConn = null
 
 async function getCollection(collectionName) {
@@ -26,7 +28,7 @@ async function connect() {
     try {
         // (node:9304) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser, useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
         // const client = await MongoClient.connect(config.dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
-        const client = await MongoClient.connect(config.dbURL)
+        const client = await MongoClient.connect(process.env.MONGODB_URI)
         const db = client.db(config.dbName)
         dbConn = db
         return db
