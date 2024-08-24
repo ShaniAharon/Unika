@@ -4,6 +4,7 @@ import express from 'express'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import dotenv from 'dotenv'; //import the dotenv 
+import cron from 'node-cron';
 
 dotenv.config(); // add the config
 
@@ -47,6 +48,21 @@ app.use('/api/product', productRoutes)
 // Make every unmatched server-side-route fall back to index.html
 // So when requesting http://localhost:3030/index.html/toy/123 it will still respond with
 // our SPA (single page app) (the index.html file) and allow vue-router to take it from there
+
+app.get('/wake-up', (req, res) => {
+  console.log('Service is awake and working');
+  res.send('Service is awake and working');
+});
+
+// Wake-up task to keep the service active
+cron.schedule('*/13 * * * *', async () => {
+  try {
+    console.log('Wake-up task running');
+    await axios.get(`https://unika.onrender.com/wake-up`);
+  } catch (error) {
+    console.error('Error during wake-up task:', error);
+  }
+});
 
 
 app.get('/**', (req, res) => {
