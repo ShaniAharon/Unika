@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import dotenv from 'dotenv'; //import the dotenv 
 import cron from 'node-cron';
+import axios from 'axios';
 
 dotenv.config(); // add the config
 
