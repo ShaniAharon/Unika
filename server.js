@@ -50,20 +50,20 @@ app.use('/api/product', productRoutes)
 // So when requesting http://localhost:3030/index.html/toy/123 it will still respond with
 // our SPA (single page app) (the index.html file) and allow vue-router to take it from there
 
-app.get('/wake-up', (req, res) => {
-  console.log('Service is awake and working');
-  res.send('Service is awake and working');
-});
+// app.get('/wake-up', (req, res) => {
+//   console.log('Service is awake and working');
+//   res.send('Service is awake and working');
+// });
 
-// Wake-up task to keep the service active
-cron.schedule('*/13 * * * *', async () => {
-  try {
-    console.log('Wake-up task running');
-    await axios.get(`https://unika.onrender.com/wake-up`);
-  } catch (error) {
-    console.error('Error during wake-up task:', error);
-  }
-});
+// // Wake-up task to keep the service active
+// cron.schedule('*/13 * * * *', async () => {
+//   try {
+//     console.log('Wake-up task running');
+//     await axios.get(`https://unika-production.up.railway.app/wake-up`);
+//   } catch (error) {
+//     console.error('Error during wake-up task:', error);
+//   }
+// });
 
 
 app.get('/**', (req, res) => {
