@@ -14,6 +14,7 @@ export async function getProducts(req, res) {
       txt: req.query.byName || '',
       status: req.query.inStock || null,
       labels: req.query.byLable || null,
+      category: req.query.category || null,
     }
     const sortBy = req.query.sortBy
       ? {

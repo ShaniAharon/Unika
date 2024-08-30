@@ -59,10 +59,11 @@ async function add(product) {
 
 async function update(product) {
   try {
+    //maybe add category
     const productToSave = {
       name: product.name,
       price: product.price,
-      labels: product.labels,
+      category: product.category,
       inStock: product.inStock,
       img: product.img
     }
@@ -110,7 +111,7 @@ async function removeProductMsg(productId, msgId) {
 }
 
 function _buildCriteria(filterBy) {
-  const { labels, txt, status } = filterBy
+  const { category, txt, status } = filterBy
 
   const criteria = {}
 
@@ -118,23 +119,27 @@ function _buildCriteria(filterBy) {
     criteria.name = { $regex: txt, $options: 'i' }
   }
 
-  if (labels && labels.length) {
-    //every for objects labels
-    // const labelsCrit = labels.map(label => ({
-    //   labels: { $elemMatch: { title: label } },
-    // }))
-
-    //every for string labels
-    // const labelsCrit = labels.map((label) => ({
-    // 	labels: label,
-    // }))
-    // criteria.$and = labelsCrit
-    // criteria.labels =  { $all: labels }
-
-    // for some for string labels
-    console.log('labels', labels)
-    criteria.labels = { $in: labels } //['Doll']
+  if (category) {
+    criteria.category = category;
   }
+
+  // if (labels && labels.length) {
+  //   //every for objects labels
+  //   // const labelsCrit = labels.map(label => ({
+  //   //   labels: { $elemMatch: { title: label } },
+  //   // }))
+
+  //   //every for string labels
+  //   // const labelsCrit = labels.map((label) => ({
+  //   // 	labels: label,
+  //   // }))
+  //   // criteria.$and = labelsCrit
+  //   // criteria.labels =  { $all: labels }
+
+  //   // for some for string labels
+  //   console.log('labels', labels)
+  //   criteria.labels = { $in: labels } //['Doll']
+  // }
 
   if (status) {
     criteria.inStock = JSON.parse(status)  // ? true : false
