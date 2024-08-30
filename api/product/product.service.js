@@ -65,7 +65,8 @@ async function update(product) {
       price: product.price,
       category: product.category,
       inStock: product.inStock,
-      img: product.img
+      img: product.img,
+      description: product.description
     }
     const collection = await dbService.getCollection('product')
     await collection.updateOne(
